@@ -15,6 +15,13 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+
+    args = ["runserver_plus", "--cert", "wowAppSite"]
+
+    for arg in args:
+        if not (arg in sys.argv):
+            sys.argv.append(arg)
+
     execute_from_command_line(sys.argv)
 
 
