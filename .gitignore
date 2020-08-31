@@ -2,8 +2,7 @@
 *~
 /.vscode
 __pycache__
-wowvenv
-db.sqlite3
+myvenv
 /static
 .DS_Store
 .idea/*
