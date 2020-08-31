@@ -6,7 +6,7 @@ wowvenv
 db.sqlite3
 /static
 .DS_Store
-.idea
+.idea/*
 wowAppSite.crt
 wowAppSite.key
 venv
