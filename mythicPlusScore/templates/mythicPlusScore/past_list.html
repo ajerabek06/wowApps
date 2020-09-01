@@ -1,0 +1,28 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WoW Mythic + Score</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type= "text/css"href="{% static 'css/mythicPlusScore.css' %}"/>
+
+</head>
+<body>
+    <h2>Search New</h2>
+    <form method="PostCharacterInfo" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+    <h2><a href="">Past Character Information</a></h2>
+        {% for recent2 in recent2 %}
+        <div>
+            <h4><a href="">{{ recent2.name }}</a></h4>
+            <p>{{ recent2.realm}} {{recent2.server|linebreaksbr }}</p>
+        </div>
+        {% endfor%}
+
+
+</body>
+</html>
