@@ -5,3 +5,7 @@ __pycache__
 myvenv
 /static
 .DS_Store
+.idea/*
+wowAppSite.crt
+wowAppSite.key
+venv
