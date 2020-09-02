@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import PostCharacterInfo
 from .form import CharacterInput
 
@@ -11,13 +11,19 @@ def search_new(request):
         print(model_instance)
         if form.is_valid():
             model_instance.save()
-
-            return redirect('form')
-
+            return redirect('post_detail',pk=model_instance.pk)
     else:
         form = CharacterInput()
+    # recent2 = PostCharacterInfo.objects.all
+    context = {'form': form, }
+    return render(request, 'mythicPlusScore/search_new.html', context, )
 
+
+def view_prior(request):
     recent2 = PostCharacterInfo.objects.all
-    context = {'form': form, 'recent2': recent2}
+    return render(request, 'mythicPlusScore/past_list.html', {'recent2': recent2})
 
-    return render(request, 'mythicPlusScore/past_list.html', context, )
+
+def post_detail(request, pk):
+    recent2 = get_object_or_404(PostCharacterInfo, pk=pk)
+    return render(request, 'mythicPlusScore/post_detail.html', {'recent2': recent2})

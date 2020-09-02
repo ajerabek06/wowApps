@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mythicPlusScore.apps.MythicplusscoreConfig',
+    'mythicPlusScore',
     'django_extensions',
 
 
