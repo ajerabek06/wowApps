@@ -6,4 +6,4 @@ class CharacterInput(ModelForm):
 
     class Meta:
         model = PostCharacterInfo
-        fields = ('name', 'realm', 'server')
+        fields = ['name', 'realm', 'server']

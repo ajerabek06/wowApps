@@ -11,7 +11,7 @@
 </head>
 <body>
     <h2>Search New</h2>
-    <form method="PostCharacterInfo" class="post-form">{% csrf_token %}
+    <form method="post" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>

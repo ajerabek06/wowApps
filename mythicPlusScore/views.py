@@ -6,12 +6,11 @@ from .form import CharacterInput
 def search_new(request):
 
     if request.method == 'POST':
-        form = CharacterInput(request.POST)
+        model_instance = PostCharacterInfo()
+        form = CharacterInput(request.POST, instance=model_instance)
+        print(model_instance)
         if form.is_valid():
-            PostCharacterInfo.name = form['name']
-            PostCharacterInfo.realm=form['realm']
-            PostCharacterInfo.server=form['server']
-            PostCharacterInfo.save()
+            model_instance.save()
 
             return redirect('form')
 
