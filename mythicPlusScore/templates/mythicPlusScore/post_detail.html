@@ -1,0 +1,12 @@
+{% extends 'mythicPlusScore/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if recent2.name %}
+
+        {% endif %}
+        <h2>{{ recent2.name }}</h2>
+        <p>{{ recent2.realm|linebreaksbr }}</p>
+        <p>{{ recent2.server|linebreaksbr }}</p>
+    </div>
+{% endblock %}
