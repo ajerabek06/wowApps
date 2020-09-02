@@ -5,6 +5,7 @@ import sys
 
 
 def main():
+    """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wowAppsSite.settings')
     try:
         from django.core.management import execute_from_command_line
@@ -14,6 +15,13 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+
+    args = ["runserver_plus", "--cert", "wowAppSite"]
+
+    for arg in args:
+        if not (arg in sys.argv):
+            sys.argv.append(arg)
+
     execute_from_command_line(sys.argv)
 
 
